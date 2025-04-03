@@ -10,7 +10,7 @@ pipeline {
 
         steps {
         container('awscli') {
-          sh 'awscli --version' 
+          sh 'aws --version' 
             
         }
       }
