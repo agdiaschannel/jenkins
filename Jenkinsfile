@@ -11,7 +11,7 @@ pipeline {
         steps {
         container('awscli') {
           sh  '''
-           aws ec2 describe-instances
+           aws ecr describe-repositories
           '''
             
         }
