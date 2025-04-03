@@ -10,7 +10,9 @@ pipeline {
 
         steps {
         container('awscli') {
-          sh 'aws --version' 
+          sh  '''
+           aws ec2 describe-instances
+          '''
             
         }
       }
