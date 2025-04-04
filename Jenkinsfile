@@ -16,7 +16,7 @@ pipeline {
         container('awscli') {
           script {
             
-           withAWS(credentials: 'jenkins-sts', role: 'arn:aws:iam::992382399891:role/ECROperator' ) {
+           withAWS(credentials: 'jenkins-sts', roleArn: 'arn:aws:iam::992382399891:role/ECROperator' roleSessionName: 'Jenkins') {
     
                 sh  '''
                   aws ecr describe-repositories
@@ -28,3 +28,5 @@ pipeline {
     }     
   }
 }
+
+
