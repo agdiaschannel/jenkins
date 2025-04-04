@@ -16,7 +16,7 @@ pipeline {
         container('awscli') {
           script {
             
-           withAWS(credentials: 'ecr-operator', region: 'us-east-1', role: 'arn:aws:iam::992382399891:role/ECROperator') {
+           withAWS(region: 'us-east-1', role: 'ecr-operator',roleAccount: '992382399891', roleSessionName: 'JenkinsSession') {
     
                 sh  '''
                   aws ecr describe-repositories
